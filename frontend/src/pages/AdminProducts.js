@@ -102,7 +102,7 @@ const AdminProducts = () => {
 
     const filteredProducts = products.filter(product => {
         const matchesCategory = filterCategory === 'All' || product.category === filterCategory;
-        const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        const matchesSearch = (product.name && product.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
             (product.brand && product.brand.toLowerCase().includes(searchTerm.toLowerCase()));
         return matchesCategory && matchesSearch;
     });

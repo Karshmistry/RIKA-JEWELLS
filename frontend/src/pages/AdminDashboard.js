@@ -14,6 +14,7 @@ const AdminDashboard = () => {
         totalRevenue: 0
     });
     const [recentOrders, setRecentOrders] = useState([]);
+    const [errorMsg, setErrorMsg] = useState("");
 
     useEffect(() => {
         const fetchStats = async () => {
@@ -24,7 +25,11 @@ const AdminDashboard = () => {
                     },
                 });
                 const data = await response.json();
-                setStats(data);
+                if (!response.ok) {
+                    setErrorMsg(`API Error: ${response.status} - ${data.message || 'Unknown error'}`);
+                } else {
+                    setStats(data);
+                }
             } catch (error) {
                 console.error('Error fetching admin stats:', error);
             }
@@ -66,6 +71,12 @@ const AdminDashboard = () => {
                         </button>
                     </div>
                 </div>
+
+                {errorMsg && (
+                    <div style={{ padding: '15px', backgroundColor: '#ffdcd2', color: '#d32f2f', borderRadius: '8px', marginBottom: '20px', border: '1px solid #d32f2f' }}>
+                        <strong>Diagnostic Issue Detected:</strong> {errorMsg}
+                    </div>
+                )}
 
                 <div className="admin-grid">
                     <div className="admin-card stat-card">
