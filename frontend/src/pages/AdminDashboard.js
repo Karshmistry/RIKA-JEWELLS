@@ -4,6 +4,26 @@ import { useNavigate } from 'react-router-dom';
 import AdminSidebar from '../components/AdminSidebar';
 import '../Admin.css';
 
+class DashboardErrorBoundary extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { hasError: false, errorComponent: null, errorMsg: "" };
+    }
+    static getDerivedStateFromError(error) { return { hasError: true }; }
+    componentDidCatch(error, errorInfo) { this.setState({ errorComponent: "Dashboard", errorMsg: error.message }); }
+    render() {
+        if (this.state.hasError) {
+            return (
+                <div style={{ padding: '40px', background: 'white' }}>
+                    <h3 style={{ color: 'red' }}>🚨 Critical React Crash in Dashboard</h3>
+                    <p style={{ color: 'black' }}>{this.state.errorMsg}</p>
+                </div>
+            );
+        }
+        return this.props.children;
+    }
+}
+
 const AdminDashboard = () => {
     const { user } = useAuth();
     const navigate = useNavigate();
@@ -56,10 +76,11 @@ const AdminDashboard = () => {
     }, [user]);
 
     return (
-        <div className="admin-layout">
-            <AdminSidebar activePage="dashboard" />
+        <DashboardErrorBoundary>
+            <div className="admin-layout">
+                <AdminSidebar activePage="dashboard" />
 
-            <div className="admin-main">
+                <div className="admin-main">
                 <div className="admin-page-header">
                     <h1 className="admin-page-title">Dashboard Overview</h1>
                     <div style={{ display: 'flex', gap: '10px' }}>
@@ -118,7 +139,7 @@ const AdminDashboard = () => {
                         <span className="stat-label">Total Revenue</span>
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                             <span className="stat-value" style={{ fontSize: '1.5rem' }}>
-                                {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(stats.totalRevenue)}
+                                {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(stats.totalRevenue || 0)}
                             </span>
                             <span style={{ fontSize: '2rem' }}></span>
                         </div>
@@ -148,9 +169,9 @@ const AdminDashboard = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {recentOrders.map(order => (
-                                        <tr key={order._id}>
-                                            <td style={{ fontSize: '0.75rem', color: 'var(--admin-text-muted)' }}>#{order._id.slice(-6)}</td>
+                                    {recentOrders.map((order, idx) => (
+                                        <tr key={order._id || idx}>
+                                            <td style={{ fontSize: '0.75rem', color: 'var(--admin-text-muted)' }}>#{order._id ? order._id.slice(-6) : 'N/A'}</td>
                                             <td style={{ fontWeight: '500' }}>{order.user?.name || 'Guest'}</td>
                                             <td>
                                                 <span className={`admin-badge ${order.orderStatus === 'Delivered' ? 'badge-success' :
@@ -193,8 +214,9 @@ const AdminDashboard = () => {
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
-        </div>
+        </DashboardErrorBoundary>
     );
 };
 
