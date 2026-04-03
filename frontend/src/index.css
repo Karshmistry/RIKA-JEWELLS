@@ -68,24 +68,7 @@ img {
    GLOBAL MOBILE RESPONSIVENESS OVERRIDES
    ========================================= */
 @media (max-width: 768px) {
-  /* 1. Flatten all main Layouts & Admin Panels */
-  .shop-layout,
-  .admin-layout,
-  [class$="-layout"],
-  [class$="-page"],
-  [class*="-main"],
-  .silver-content, .gold-content, .diamond-content, .platinum-content, .gemstone-content, .wedding-content, .gift-content, .collections-content,
-  .admin-container {
-    display: flex !important;
-    flex-direction: column !important;
-    padding: 10px !important;
-    margin: 0 !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    overflow-x: hidden !important;
-  }
-
-  /* 2. Elegant Filter Drawers for Shop Pages on Mobile */
+  /* Elegant Filter Drawers for Shop Pages on Mobile */
   [class$="filters-sidebar"],
   .filter-sidebar {
     position: fixed !important;
@@ -112,40 +95,7 @@ img {
     display: block !important;
   }
 
-  /* 3. Universal Product Grids - 2 columns on tablets/large phones */
-  [class$="products-grid"],
-  [class*="products-grid"],
-  .products-grid,
-  .collection-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 15px !important;
-    padding: 5px !important;
-  }
-
-  /* 4. Product Cards Scaling */
-  [class*="product-card"] {
-    height: auto !important;
-    min-height: 280px !important;
-    margin: 0 !important;
-  }
-
-  [class*="product-image"] img,
-  [class*="image-container"] img {
-    height: 160px !important;
-    object-fit: cover !important;
-  }
-
-  /* 5. Headers & Texts Scaling */
-  .page-title, [class*="-title"] {
-    font-size: 28px !important;
-    line-height: 1.3 !important;
-    word-break: break-word !important;
-  }
-  
-  h2 { font-size: 24px !important; }
-
-  /* 6. Admin & Profile Tables Horizontal Scroll */
+  /* Admin & Profile Tables Horizontal Scroll */
   table, .table-container, [class$="-table"], .table-wrapper {
     display: block !important;
     width: 100% !important;
@@ -154,27 +104,18 @@ img {
     border: none !important;
   }
 
-  /* 7. Forms and Inputs Full Width */
-  input:not([type="checkbox"]):not([type="radio"]), 
-  select, 
-  textarea, 
-  .form-group {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  /* 8. Prevention of horizontal scroll */
+  /* Prevention of horizontal scroll */
   html, body {
     overflow-x: hidden !important;
     width: 100vw !important;
   }
-}
 
-/* Specific rule for small phones to stack into 1 column */
-@media (max-width: 480px) {
+  /* Universal 1-Column Grid for Phones (Like Gemstone Page) */
   [class$="products-grid"],
   [class*="products-grid"],
-  .products-grid {
+  .products-grid,
+  .collection-grid {
     grid-template-columns: 1fr !important;
+    gap: 20px !important;
   }
 }
