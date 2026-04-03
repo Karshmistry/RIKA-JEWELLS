@@ -112,3 +112,61 @@
         padding: 0 30px;
     }
 }
+
+@media (max-width: 768px) {
+    .admin-sidebar {
+        width: 100%;
+        min-height: auto;
+        position: relative;
+        padding: 15px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .admin-logo {
+        margin-bottom: 15px;
+        text-align: center;
+        padding: 0 15px;
+    }
+    
+    .admin-nav {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 0 10px 10px 10px;
+        gap: 8px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .admin-nav::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .admin-nav-item {
+        padding: 10px 15px;
+        font-size: 13px;
+        border-radius: 8px;
+        border: none;
+        white-space: nowrap;
+    }
+    
+    .admin-nav-item:hover {
+        padding-left: 15px;
+    }
+    
+    .admin-nav-item.active {
+        border-left-color: transparent;
+        background: var(--admin-primary);
+        color: white;
+    }
+    
+    .admin-nav-spacer {
+        display: none;
+    }
+    
+    .admin-logout-btn {
+        margin: 0;
+        padding: 10px 15px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+}

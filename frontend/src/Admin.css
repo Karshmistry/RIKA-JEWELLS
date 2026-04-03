@@ -285,6 +285,46 @@
     .admin-layout {
         flex-direction: column;
     }
+    
+    .admin-main {
+        padding: 15px;
+    }
+    
+    .admin-page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .admin-page-header > div {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .admin-page-title {
+        font-size: 24px;
+    }
+    
+    .admin-btn {
+        flex: 1;
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .admin-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .admin-card {
+        padding: 15px;
+    }
+    
+    .stat-value {
+        font-size: 24px;
+    }
 }
 
 /* UDARI SYSTEM SPECIFIC STYLES */
