@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const orderSchema = new mongoose.Schema({
   orderId: {
     type: String,
-    required: true,
+    required: false,
     unique: true
   },
   user: {
@@ -34,7 +34,7 @@ const orderSchema = new mongoose.Schema({
   payment: {
     method: {
       type: String,
-      enum: ['COD', 'Razorpay', 'Card'],
+      enum: ['COD', 'RAZORPAY', 'CARD', 'UPI', 'NETBANKING'],
       default: 'COD'
     },
     status: {
@@ -48,10 +48,10 @@ const orderSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  status: {
+  orderStatus: {
     type: String,
-    enum: ['pending', 'processing', 'shipped', 'delivered', 'cancelled'],
-    default: 'pending'
+    enum: ['Pending', 'Processing', 'Shipped', 'Delivered', 'Cancelled'],
+    default: 'Pending'
   },
   createdAt: {
     type: Date,
@@ -59,4 +59,9 @@ const orderSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Order', orderSchema);
+// Force refresh schema by deleting from cache if exists
+if (mongoose.models.Order) {
+  delete mongoose.models.Order;
+}
+const Order = mongoose.model('Order', orderSchema);
+export default Order;

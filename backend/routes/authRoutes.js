@@ -57,21 +57,21 @@
 //   try {
 //     // Simple auth middleware
 //     const token = req.headers.authorization?.split(' ')[1];
-    
+
 //     if (!token) {
 //       return res.status(401).json({
 //         success: false,
 //         message: 'Not authorized'
 //       });
 //     }
-    
+
 //     // For now, just set a mock user
 //     req.user = {
 //       id: 'mock_user_id',
 //       email: 'test@test.com',
 //       role: 'user'
 //     };
-    
+
 //     next();
 //   } catch (error) {
 //     return res.status(401).json({
@@ -83,10 +83,13 @@
 
 
 import express from 'express';
-import { register } from '../controllers/authController.js';
+import { register, login, getMe } from '../controllers/authController.js';
+import { protect } from '../middleware/auth.js';
 
 const router = express.Router();
 
 router.post('/register', register);
+router.post('/login', login);
+router.get('/me', protect, getMe);
 
 export default router;
