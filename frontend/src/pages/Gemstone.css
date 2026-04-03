@@ -1,0 +1,696 @@
+/* Gemstone.css - "The Jewel Vault" Premium Theme */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+  --gem-primary: #8b5cf6;
+  /* Vibrant Violet */
+  --gem-ruby: #dc2626;
+  --gem-emerald: #10b981;
+  --gem-sapphire: #2563eb;
+  --gem-dark: #111827;
+  --gem-light: #f9fafb;
+  --gem-accent: #fbbf24;
+  /* Golden highlight */
+  --gem-text: #1f2937;
+  --gem-muted: #6b7280;
+  --gem-border: #e5e7eb;
+  --gem-glass: rgba(255, 255, 255, 0.95);
+  --gem-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+  --gem-gradient: linear-gradient(135deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%);
+  --gem-glint: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.4) 50%, transparent 60%);
+}
+
+.gemstone-page {
+  background: #ffffff;
+  min-height: 100vh;
+  font-family: 'Outfit', sans-serif;
+  color: var(--gem-text);
+  overflow-x: hidden;
+}
+
+/* ===== HERO SECTION ===== */
+.gemstone-hero {
+  position: relative;
+  height: 90vh;
+  min-height: 700px;
+  background-image: url('../assets/Silver.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 0.2) 0%, 
+    rgba(0, 0, 0, 0.5) 60%, 
+    rgba(255, 255, 255, 1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  z-index: 1;
+}
+
+.gemstone-hero-content {
+  text-align: center;
+  max-width: 1100px;
+  z-index: 2;
+  animation: gemReveal 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes gemReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gemstone-hero-tag {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 25px;
+  display: inline-block;
+  padding: 10px 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.gemstone-hero-title {
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  line-height: 0.95;
+  background: var(--gem-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+}
+
+.gemstone-hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 60px;
+  opacity: 0.9;
+  letter-spacing: 3px;
+  font-weight: 300;
+  color: #e5e7eb;
+}
+
+/* Rate Banner */
+.gemstone-rate-banner {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.rate-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  padding: 30px 45px;
+  border-radius: 0;
+  /* Sharp corners */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-width: 260px;
+  transition: all 0.5s ease;
+}
+
+.rate-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-10px);
+  border-color: var(--gem-accent);
+}
+
+.rate-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #9ca3af;
+  margin-bottom: 12px;
+}
+
+.rate-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: white;
+}
+
+.rate-change {
+  font-size: 0.85rem;
+  margin-top: 5px;
+  color: var(--gem-emerald);
+  font-weight: 700;
+}
+
+/* Buttons */
+.gemstone-hero-buttons {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.gemstone-btn-primary {
+  background: white;
+  color: var(--gem-dark);
+  padding: 22px 55px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gemstone-btn-primary:hover {
+  background: var(--gem-accent);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(251, 191, 36, 0.3);
+}
+
+.gemstone-btn-secondary {
+  padding: 22px 55px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.gemstone-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+}
+
+/* ===== TRUST BAR ===== */
+.gemstone-trust-bar {
+  background: #ffffff;
+  padding: 50px 0;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+  z-index: 2;
+}
+
+.trust-items {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  padding: 0 40px;
+  flex: 1;
+  min-width: 250px;
+  justify-content: center;
+}
+
+.trust-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 40px;
+  width: 1px;
+  background: #dddddd;
+}
+
+.trust-icon {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.05));
+}
+
+.trust-text strong {
+  display: block;
+  font-size: 1rem;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.trust-text p {
+  font-size: 0.8rem;
+  color: #666666;
+  margin-top: 2px;
+}
+
+/* ===== CATEGORY SECTION ===== */
+.gemstone-categories {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+  /* Consistent light grey background */
+  border-bottom: 1px solid #eeeeee;
+}
+
+.gemstone-section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #1a1a1a;
+  font-family: 'Outfit', sans-serif;
+}
+
+.gemstone-category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.gemstone-category-tab {
+  padding: 15px 35px;
+  background: white;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  /* Industrial rectangular look */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  color: #1a1a1a;
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.gemstone-category-tab:hover {
+  border-color: #bbbbbb;
+  background: #ffffff;
+}
+
+.gemstone-category-tab.active {
+  background: #1a1a1a;
+  color: white;
+  border-color: #1a1a1a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== MAIN CONTENT ===== */
+.gemstone-main {
+  padding: 120px 0;
+}
+
+.gemstone-content {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 60px;
+}
+
+/* Sidebar Filters */
+.gemstone-filters-sidebar {
+  background: white;
+  padding: 40px;
+  border: 1px solid #eee;
+  border-radius: 0;
+  height: fit-content;
+  position: sticky;
+  top: 120px;
+  box-shadow: var(--gem-shadow);
+}
+
+.gemstone-filter-header h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 20px;
+}
+
+.gemstone-filter-section {
+  margin-bottom: 45px;
+}
+
+.gemstone-filter-section h4 {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: 25px;
+  color: var(--gem-muted);
+}
+
+.gemstone-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 18px;
+  transition: all 0.3s;
+}
+
+.gemstone-checkbox-label:hover {
+  color: var(--gem-dark);
+  transform: translateX(5px);
+}
+
+.gemstone-checkbox-label input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--gem-dark);
+}
+
+.gemstone-clear-filters-btn {
+  width: 100%;
+  padding: 20px;
+  background: var(--gem-dark);
+  color: white;
+  border: none;
+  border-radius: 0;
+  font-weight: 800;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+/* ===== PRODUCTS GRID ===== */
+.gemstone-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.gemstone-product-card {
+  background: white;
+  border: 1px solid #eeeeee;
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+}
+
+.gemstone-product-card:hover {
+  border-color: var(--gem-accent);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+}
+
+.gemstone-product-image {
+  position: relative;
+  height: 380px;
+  background: #1a1a1a;
+  /* Dark presentation background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gemstone-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.gemstone-product-card:hover .gemstone-product-image img {
+  transform: scale(1.08) rotate(1deg);
+}
+
+/* Float Actions */
+.gemstone-float-actions {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(15px);
+  transition: all 0.4s ease;
+}
+
+.gemstone-product-card:hover .gemstone-float-actions {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.float-btn {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  transition: all 0.2s;
+}
+
+.float-btn:hover, .float-btn.active {
+  background: var(--gem-accent);
+  color: white;
+  transform: scale(1.1);
+}
+
+.float-btn.wishlist {
+  color: #ff4d4d;
+}
+
+/* Badges */
+.gemstone-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 8px 18px;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  z-index: 10;
+  border-radius: 0;
+}
+
+.gemstone-badge.new {
+  background: var(--gem-accent);
+  color: var(--gem-dark);
+}
+
+.gemstone-badge.discount {
+  background: var(--gem-ruby);
+  color: white;
+}
+
+.gemstone-badge.ruby {
+  border: 1px solid var(--gem-ruby);
+  color: var(--gem-ruby);
+  background: rgba(220, 38, 38, 0.1);
+  top: auto;
+  bottom: 15px;
+}
+
+.gemstone-product-info {
+  padding: 35px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.gemstone-product-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.gemstone-product-description {
+  font-size: 0.9rem;
+  color: var(--gem-muted);
+  margin-bottom: 20px;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.platinum-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.platinum-stars {
+  color: #fbbf24;
+  font-size: 0.9rem;
+}
+
+.rating-score {
+  font-weight: 800;
+}
+
+.review-count {
+  color: var(--gem-muted);
+  font-size: 0.85rem;
+}
+
+.gemstone-product-price {
+  margin-bottom: 30px;
+  margin-top: auto;
+}
+
+.gemstone-current-price {
+  font-size: 2.22rem;
+  font-weight: 900;
+  color: var(--gem-dark);
+}
+
+.gemstone-product-actions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.gemstone-add-to-cart-btn,
+.gemstone-buy-now-btn {
+  padding: 15px 30px;
+  border-radius: 100px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gemstone-add-to-cart-btn {
+  background: white;
+  border: 1.5px solid #000000;
+  color: #000000;
+}
+
+.gemstone-buy-now-btn {
+  background: #000000;
+  color: white;
+  border: 1.5px solid #000000;
+}
+
+.gemstone-add-to-cart-btn:hover {
+  background: #f8f8f8;
+  transform: scale(1.02);
+}
+
+.gemstone-buy-now-btn:hover {
+  background: #333333;
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== GEMSTONE GUIDE ===== */
+.gemstone-guide {
+  padding: 120px 0;
+  background: #111827;
+  color: white;
+}
+
+.gemstone-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.gemstone-guide-card {
+  padding: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transition: all 0.4s;
+}
+
+.gemstone-guide-card:hover {
+  border-color: var(--gem-accent);
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.gemstone-guide-icon {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  display: block;
+}
+
+/* ===== FOOTER ===== */
+.footer-professional {
+  background: #000;
+  color: white;
+  padding: 100px 0 50px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .gemstone-content {
+    grid-template-columns: 1fr;
+  }
+
+  .gemstone-filters-sidebar {
+    display: none;
+  }
+
+  .gemstone-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gemstone-hero-title {
+    font-size: 3rem;
+  }
+
+  .gemstone-products-grid {
+    grid-template-columns: 1fr;
+  }
+}

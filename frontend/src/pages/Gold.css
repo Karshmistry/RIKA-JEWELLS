@@ -1,0 +1,1134 @@
+/* Gold.css */
+:root {
+  --gold-primary: #D4AF37;
+  --gold-secondary: #C5A028;
+  --gold-dark: #1A1A1A;
+  --gold-light: #F9F9F9;
+  --gold-accent: #8B4513;
+  --gold-text: #333;
+  --gold-border: #E5E5E5;
+  --gold-gray: #F4F4F4;
+}
+
+.gold-page {
+  background-color: white;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: var(--gold-dark);
+  overflow-x: hidden;
+  /* Fix horizontal scroll bug */
+}
+
+/* ===== HERO SECTION ===== */
+.gold-hero {
+  position: relative;
+  min-height: 80vh;
+  min-height: 500px;
+  background-image: url('../assets/Silver.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  /* overflow: hidden; */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.gold-hero-content {
+  text-align: center;
+  max-width: 900px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: goldFadeInUp 1s ease-out;
+}
+
+/* Hero Tag & Reveal */
+.gold-hero-tag {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 15px;
+  display: inline-block;
+  padding: 5px 15px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+}
+
+.gold-hero-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 25px;
+  line-height: 1;
+  background: linear-gradient(135deg, #FFF 0%, #FFD700 25%, #D4AF37 50%, #FFD700 75%, #FFF 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.3));
+  animation: goldFadeInUp 1s ease-out 0.2s both, shimmer 6s linear infinite;
+}
+
+.gold-hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.8;
+  letter-spacing: 3px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+/* Gold Rate Banner */
+.gold-rate-banner {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.rate-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  padding: 25px 35px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 320px;
+  /* transition: none; */
+}
+
+.rate-card:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--gold-primary);
+}
+
+.rate-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #AAA;
+  margin-bottom: 5px;
+}
+
+.rate-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.rate-trend {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.rate-trend.positive {
+  color: #2ecc71;
+}
+
+.rate-update {
+  font-size: 0.7rem;
+  opacity: 0.5;
+  margin-top: 5px;
+}
+
+/* Buttons */
+.gold-hero-btns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.gold-btn-primary {
+  background: var(--gold-primary);
+  color: var(--gold-dark);
+  padding: 18px 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gold-btn-primary:hover {
+  background: white;
+  transform: scale(1.05);
+}
+
+.gold-btn-outline {
+  padding: 18px 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gold-btn-outline:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Scroll Indicator */
+.gold-hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  opacity: 0.6;
+}
+
+.gold-hero-scroll span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--gold-primary), transparent);
+}
+
+/* ===== CATEGORY TABS ===== */
+.gold-categories {
+  padding: 60px 0;
+  background: var(--gold-gray);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.gold-section-title {
+  text-align: center;
+  font-size: 2.22rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.gold-category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.gold-category-tab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 30px;
+  background: white;
+  border: 1px solid var(--gold-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.gold-category-tab:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+}
+
+.gold-category-tab.active {
+  background: var(--gold-dark);
+  color: var(--gold-primary);
+  border-color: var(--gold-dark);
+}
+
+/* ===== MAIN CONTENT ===== */
+.gold-main {
+  padding: 80px 0;
+}
+
+.gold-content {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+}
+
+/* Filters Sidebar */
+.gold-filters-sidebar {
+  background: white;
+  padding: 30px;
+  border-radius: 4px;
+  border: 1px solid var(--gold-border);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.gold-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.gold-filter-header h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gold-close-filter {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.gold-filter-section {
+  margin-bottom: 35px;
+}
+
+.gold-filter-section h4 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: #888;
+}
+
+/* Price Quick Filters */
+.gold-price-quick-filters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.gold-price-quick-btn {
+  padding: 10px 15px;
+  background: var(--gold-gray);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gold-price-quick-btn:hover {
+  background: white;
+  border-color: var(--gold-primary);
+}
+
+.gold-price-quick-btn.active {
+  background: var(--gold-dark);
+  color: var(--gold-primary);
+  border-color: var(--gold-dark);
+}
+
+/* Checkboxes */
+.gold-checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gold-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.gold-checkbox-label:hover {
+  color: var(--gold-primary);
+}
+
+.gold-checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--gold-primary);
+}
+
+.gold-clear-filters-btn {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid var(--gold-dark);
+  color: var(--gold-dark);
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.gold-clear-filters-btn:hover {
+  background: var(--gold-dark);
+  color: white;
+}
+
+/* ===== PRODUCTS SECTION ===== */
+.gold-products-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.gold-products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.gold-products-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gold-products-count {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.gold-products-controls {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.gold-filter-toggle {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  border: 1px solid var(--gold-border);
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.gold-sort-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gold-sort-dropdown label {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.gold-sort-dropdown select {
+  padding: 8px 15px;
+  border: 1px solid var(--gold-border);
+  border-radius: 4px;
+  background: white;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Products Grid */
+.gold-page .products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) !important;
+  /* Enforce exactly 3 items per line */
+  gap: 30px;
+}
+
+.gold-product-card {
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
+  border: 1px solid var(--gold-border);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.gold-product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border-color: var(--gold-primary);
+}
+
+.gold-product-image {
+  position: relative;
+  height: 320px;
+  background: var(--gold-gray);
+  overflow: hidden;
+}
+
+.gold-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.gold-product-card:hover .gold-product-image img {
+  transform: scale(1.1);
+}
+
+.gold-product-badges {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2;
+}
+
+.gold-badge {
+  padding: 5px 12px;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gold-badge.discount {
+  background: #E74C3C;
+  color: white;
+}
+
+.gold-badge.new {
+  background: var(--gold-primary);
+  color: white;
+}
+
+.gold-badge.bestseller {
+  background: var(--gold-dark);
+  color: var(--gold-primary);
+}
+
+.gold-product-actions {
+  position: absolute;
+  right: -50px;
+  top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.gold-product-card:hover .gold-product-actions {
+  right: 15px;
+}
+
+.gold-action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  background: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gold-action-btn:hover, .gold-action-btn.active {
+  background: var(--gold-dark);
+  color: var(--gold-primary);
+}
+
+/* Product Info */
+.gold-product-info {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.gold-product-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.gold-product-description {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.gold-product-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.gold-stars {
+  color: #F1C40F;
+  letter-spacing: 2px;
+}
+
+.gold-rating-value {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.gold-reviews {
+  color: #AAA;
+  font-size: 0.85rem;
+}
+
+.gold-product-price {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  margin-top: auto;
+}
+
+.gold-current-price {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--gold-dark);
+}
+
+.gold-original-price {
+  text-decoration: line-through;
+  color: #AAA;
+  font-size: 1.1rem;
+}
+
+.gold-product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-top: 15px;
+  border-top: 1px solid var(--gold-gray);
+}
+
+/* Trust Bar */
+.gold-trust-bar {
+  background: white;
+  padding: 80px 0;
+  /* More padding to separate from hero cards */
+  border-bottom: 1px solid #EEE;
+  position: relative;
+  z-index: 5;
+}
+
+.trust-items {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.trust-icon {
+  font-size: 2rem;
+}
+
+.trust-text strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--gold-dark);
+}
+
+.trust-text p {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 2px 0 0;
+}
+
+.gold-specs-badges {
+  display: flex;
+  gap: 8px;
+}
+
+.spec-badge {
+  background: var(--gold-gray);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.gold-stock-status {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.gold-stock-status.in-stock {
+  color: #27AE60;
+}
+
+.gold-stock-status.out-stock {
+  color: #E74C3C;
+}
+
+/* Product Actions Row */
+.gold-product-actions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.gold-add-to-cart-btn,
+.gold-buy-now-btn {
+  padding: 15px 30px;
+  border-radius: 100px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gold-add-to-cart-btn {
+  background: white;
+  border: 1.5px solid #000000;
+  color: #000000;
+}
+
+.gold-buy-now-btn {
+  background: #000000;
+  color: white;
+  border: 1.5px solid #000000;
+}
+
+.gold-add-to-cart-btn:hover {
+  background: #f8f8f8;
+  transform: scale(1.02);
+}
+
+.gold-buy-now-btn:hover {
+  background: #333333;
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== FOOTER ===== */
+.footer-professional {
+  background: var(--gold-dark);
+  color: white;
+  padding: 80px 0 40px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: var(--gold-primary);
+}
+
+.footer-links {
+  display: flex;
+  gap: 40px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-links span {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-links span:hover {
+  color: var(--gold-primary);
+}
+
+.footer-bottom {
+  padding-top: 40px;
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* ===== CALCULATOR IMPROVED ===== */
+.calculator-section {
+  padding: 100px 0;
+  background: #FFFBF0;
+}
+
+.calculator-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.calculator-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.calculator-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.calculator-card {
+  background: white;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  overflow: hidden;
+}
+
+.calculator-form {
+  padding: 50px;
+}
+
+.input-field {
+  margin-bottom: 30px;
+}
+
+.input-field label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.input-with-label {
+  display: flex;
+  align-items: center;
+  background: #F9F9F9;
+  border: 1px solid #EEE;
+  border-radius: 12px;
+  padding: 5px 20px;
+}
+
+.input-with-label input {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 12px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  outline: none;
+}
+
+.field-unit {
+  font-weight: 600;
+  color: #AAA;
+}
+
+.purity-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.purity-selector button {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #EEE;
+  background: white;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.purity-selector button.active {
+  background: var(--gold-dark);
+  color: var(--gold-primary);
+  border-color: var(--gold-dark);
+}
+
+.calculator-preview {
+  margin-top: 40px;
+  padding: 15px;
+  background: #FFF9E5;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.preview-val {
+  font-weight: 700;
+  color: var(--gold-accent);
+}
+
+.calculator-divider {
+  background: #EEE;
+  margin: 40px 0;
+}
+
+.calculator-display {
+  padding: 50px;
+  background: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.calc-main-result .label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888;
+}
+
+.calc-main-result .amount {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--gold-dark);
+  margin: 10px 0;
+}
+
+.disclaimer {
+  font-size: 0.75rem;
+  color: #AAA;
+  max-width: 250px;
+}
+
+.btn-invest {
+  margin-top: 30px;
+  background: var(--gold-dark);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-invest:hover {
+  background: var(--gold-primary);
+  color: var(--gold-dark);
+}
+
+@media (max-width: 768px) {
+  .calculator-card {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator-divider {
+    height: 1px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .calc-main-result .amount {
+    font-size: 2.5rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* ===== PREMIUM ANIMATIONS ===== */
+@keyframes goldFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes goldFadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes goldFadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes goldPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+  }
+
+  70% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Applying Animations */
+.gold-hero-tag {
+  animation: goldFadeInLeft 0.8s ease-out both;
+}
+
+.gold-hero-title {
+  animation: goldFadeInUp 1s ease-out 0.2s both;
+}
+
+.gold-hero-subtitle {
+  animation: goldFadeInUp 1s ease-out 0.4s both;
+}
+
+
+.rate-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.rate-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+  pointer-events: none;
+}
+
+.trust-item {
+  animation: goldFadeInUp 0.8s ease-out both;
+}
+
+.trust-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.trust-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.trust-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.trust-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.gold-category-tab {
+  animation: goldFadeInUp 0.6s ease-out both;
+}
+
+.gold-category-tab:nth-child(n) {
+  animation-delay: calc(0.1s * var(--i, 1));
+}
+
+.gold-product-card {
+  animation: goldFadeInUp 0.8s ease-out both;
+  animation-delay: calc(0.1s * var(--i, 0));
+}

@@ -1,0 +1,65 @@
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* ===== LINKS ===== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== LIST RESET ===== */
+ul {
+  list-style: none;
+}
+
+/* ===== BUTTON RESET ===== */
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ===== IMAGE ===== */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== OPTIONAL SCROLLBAR (PREMIUM FEEL) ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #d4af37, #b8860b);
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+
+::-webkit-scrollbar-track {
+  background: #fcf9f5;
+}
+
+/* ===== SELECTION COLOR ===== */
+::selection {
+  background: #d4af37;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #d4af37;
+  color: #fff;
+}

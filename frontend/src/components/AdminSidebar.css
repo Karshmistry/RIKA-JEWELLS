@@ -1,0 +1,114 @@
+/* AdminSidebar.css - Rika Jewells Exclusive Admin Sidebar */
+
+.admin-sidebar {
+    width: 280px;
+    background: var(--admin-sidebar-bg, #111827);
+    color: #ffffff;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    z-index: 100;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-logo {
+    padding: 0 40px;
+    margin-bottom: 60px;
+}
+
+.admin-logo h2 {
+    color: var(--admin-primary, #c5a044);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.admin-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.admin-nav-item {
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 4px solid transparent;
+}
+
+.admin-nav-item:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+    padding-left: 45px;
+}
+
+.admin-nav-item.active {
+    color: #ffffff;
+    background: rgba(197, 160, 68, 0.15);
+    border-left-color: var(--admin-primary, #c5a044);
+    font-weight: 600;
+}
+
+.admin-nav-item .icon {
+    font-size: 18px;
+    width: 20px;
+}
+
+.admin-nav-spacer {
+    flex: 1;
+}
+
+.admin-logout-btn {
+    margin: 40px 40px 0;
+    padding: 12px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.admin-logout-btn:hover {
+    background: #ef4444;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* RESPONSIVE SUBTLETY */
+@media (max-width: 1024px) {
+    .admin-sidebar {
+        width: 240px;
+    }
+
+    .admin-nav-item {
+        padding: 12px 30px;
+        gap: 15px;
+    }
+
+    .admin-logo {
+        padding: 0 30px;
+    }
+}

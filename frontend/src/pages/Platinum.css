@@ -1,0 +1,888 @@
+/* Platinum.css - Premium "Metallic Luxury" Theme */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+  --plat-primary: #e5e7eb;
+  /* Cool metallic silver */
+  --plat-secondary: #f3f4f6;
+  --plat-dark: #111827;
+  --plat-accent: #374151;
+  /* Dark graphite */
+  --plat-text: #1f2937;
+  --plat-muted: #6b7280;
+  --plat-border: #e5e7eb;
+  --plat-glass: rgba(255, 255, 255, 0.85);
+  --plat-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  --plat-gradient: linear-gradient(135deg, #f9fafb 0%, #d1d5db 100%);
+  --plat-shine: linear-gradient(45deg, transparent 45%, rgba(255, 255, 255, 0.8) 50%, transparent 55%);
+}
+
+.platinum-page {
+  background: radial-gradient(circle at top right, #ffffff, #f3f4f6);
+  min-height: 100vh;
+  font-family: 'Outfit', sans-serif;
+  color: var(--plat-text);
+  overflow-x: hidden;
+}
+
+/* ===== HERO SECTION ===== */
+.platinum-hero {
+  position: relative;
+  min-height: 80vh;
+  background-image: url('../assets/Silver.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.5) 60%,
+      rgba(17, 24, 39, 1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  z-index: 1;
+}
+
+.platinum-hero-content {
+  text-align: center;
+  max-width: 1000px;
+  z-index: 2;
+  animation: platReveal 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes platReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.platinum-hero-tag {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--plat-primary);
+  margin-bottom: 15px;
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid rgba(229, 231, 235, 0.3);
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+}
+
+.platinum-hero-title {
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  margin-bottom: 20px;
+  line-height: 0.9;
+  background: linear-gradient(135deg, #fff, #9ca3af, #4b5563);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+}
+
+.platinum-hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  letter-spacing: 4px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #d1d5db;
+}
+
+/* Rate Banner - Dynamic Shine */
+.platinum-rate-banner {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.rate-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  padding: 30px 45px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 380px;
+  transition: all 0.3s ease;
+}
+
+.rate-card::before {
+  display: none;
+}
+
+@keyframes platShine {
+  0% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+
+  100% {
+    transform: translateX(100%) translateY(100%);
+  }
+}
+
+.rate-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.rate-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #9ca3af;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.rate-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.rate-change {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 5px;
+  color: #34d399;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Buttons */
+.platinum-hero-buttons {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.platinum-btn-primary {
+  background: white;
+  color: var(--plat-dark);
+  padding: 22px 55px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.platinum-btn-primary:hover {
+  background: var(--plat-primary);
+  transform: scale(1.08) translateY(-5px);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+}
+
+.platinum-btn-secondary {
+  padding: 22px 55px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.platinum-btn-secondary:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+/* ===== TRUST BAR ===== */
+.platinum-trust-bar {
+  background: #ffffff;
+  padding: 50px 0;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+  z-index: 2;
+}
+
+.trust-items {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  padding: 0 30px;
+}
+
+.trust-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 40px;
+  width: 1px;
+  background: #dddddd;
+}
+
+.trust-icon {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+}
+
+.trust-text strong {
+  display: block;
+  font-size: 1rem;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.trust-text p {
+  font-size: 0.8rem;
+  color: #666666;
+  margin-top: 2px;
+}
+
+/* ===== CATEGORY SECTION ===== */
+.platinum-categories {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+  /* Light grey background for premium feel */
+  border-bottom: 1px solid #eeeeee;
+}
+
+.platinum-section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #1a1a1a;
+  font-family: 'Outfit', sans-serif;
+}
+
+.platinum-category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.platinum-category-tab {
+  padding: 15px 35px;
+  background: white;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  /* More rectangular as in the reference image */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  color: #1a1a1a;
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.platinum-category-tab:hover {
+  border-color: #bbbbbb;
+  background: #ffffff;
+}
+
+.platinum-category-tab.active {
+  background: #1a1a1a;
+  color: white;
+  border-color: #1a1a1a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== MAIN SHOP SECTION ===== */
+.platinum-main {
+  padding: 120px 0;
+}
+
+.platinum-content {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 60px;
+}
+
+/* Filter Sidebar - Glassmorphism */
+.platinum-filters-sidebar {
+  background: var(--plat-glass);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  height: fit-content;
+  position: sticky;
+  top: 120px;
+  box-shadow: var(--plat-shadow);
+}
+
+.platinum-filter-header {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f3f4f6;
+}
+
+.platinum-filter-header h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.platinum-filter-section {
+  margin-bottom: 45px;
+}
+
+.platinum-filter-section h4 {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: 25px;
+  color: var(--plat-muted);
+}
+
+.platinum-price-inputs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.platinum-price-input label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--plat-accent);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.platinum-price-input input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  font-weight: 600;
+  background: white;
+}
+
+.platinum-price-quick-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.platinum-price-quick-btn {
+  padding: 15px 20px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.platinum-price-quick-btn:hover {
+  background: white;
+  transform: translateX(10px);
+  color: var(--plat-dark);
+}
+
+.platinum-price-quick-btn.platinum-badge.luxury {
+  background: var(--plat-primary);
+  color: white;
+}
+
+/* Float Actions */
+.platinum-float-actions {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 5;
+}
+
+.float-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 0;
+  color: #333;
+}
+
+.float-btn:hover, .float-btn.active {
+  background: white;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+
+.platinum-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 18px;
+  transition: all 0.3s;
+}
+
+.platinum-checkbox-label:hover {
+  color: var(--plat-dark);
+  transform: translateX(5px);
+}
+
+.platinum-checkbox-label input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--plat-dark);
+}
+
+.platinum-clear-filters-btn {
+  width: 100%;
+  padding: 20px;
+  background: var(--plat-dark);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+/* ===== PRODUCTS GRID ===== */
+.platinum-products-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.platinum-products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--plat-glass);
+  backdrop-filter: blur(20px);
+  padding: 30px 45px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.platinum-products-info h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+/* Products Grid - Inspired by Reference Image */
+.platinum-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 products per line */
+  gap: 30px;
+}
+
+.platinum-product-card {
+  background: white;
+  border: 1px solid #eeeeee;
+  border-radius: 0;
+  /* Sharp corners as in image */
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+}
+
+.platinum-product-card:hover {
+  border-color: #d4af37;
+  /* Gold border on hover from image */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.platinum-product-image {
+  position: relative;
+  height: 350px;
+  background: #1a1a1a;
+  /* Dark background like the bridal sets in image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.platinum-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.platinum-product-card:hover .platinum-product-image img {
+  transform: scale(1.08);
+}
+
+/* Float Actions (Eye & Heart) - Top Right */
+.platinum-float-actions {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+
+.float-btn {
+  width: 35px;
+  height: 35px;
+  background: white;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  transition: transform 0.2s;
+}
+
+.float-btn:hover {
+  transform: scale(1.1);
+}
+
+.float-btn.wishlist {
+  color: #ff4d4d;
+}
+
+.float-btn.view {
+  color: #555;
+}
+
+/* Badge Styling */
+.platinum-badge.new {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #d4af37;
+  /* Gold 'NEW' badge from image */
+  color: white;
+  padding: 5px 15px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  z-index: 10;
+}
+
+.platinum-badge.luxury {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 4px 10px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 2px;
+}
+
+.platinum-product-info {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.platinum-product-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.platinum-product-description {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  /* Fixed lint: added standard property */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.platinum-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.platinum-stars {
+  color: #f1c40f;
+  font-size: 0.85rem;
+}
+
+.rating-score {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.review-count {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.platinum-product-price {
+  margin-top: auto;
+}
+
+.platinum-current-price {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #111;
+}
+
+.platinum-original-price {
+  text-decoration: line-through;
+  color: #9ca3af;
+  font-size: 1.2rem;
+}
+
+.platinum-product-actions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.platinum-add-to-cart-btn,
+.platinum-buy-now-btn {
+  padding: 15px 30px;
+  border-radius: 100px;
+  /* Perfect pill shape from image */
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  /* Spaced out text as in image */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.platinum-add-to-cart-btn {
+  background: white;
+  border: 1.5px solid #000000;
+  color: #000000;
+}
+
+.platinum-buy-now-btn {
+  background: #000000;
+  color: white;
+  border: 1.5px solid #000000;
+}
+
+.platinum-add-to-cart-btn:hover {
+  background: #f8f8f8;
+  transform: scale(1.02);
+}
+
+.platinum-buy-now-btn:hover {
+  background: #333333;
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== PLATINUM GUIDE ===== */
+.platinum-guide {
+  padding: 120px 0;
+  background: var(--plat-dark);
+  color: white;
+}
+
+.platinum-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.platinum-guide-card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 50px;
+  border-radius: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s;
+}
+
+.platinum-guide-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-15px);
+  border-color: var(--plat-primary);
+}
+
+.platinum-guide-icon {
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+  display: block;
+}
+
+/* ===== CALCULATOR SECTION ===== */
+.platinum-calculator-section {
+  padding: 120px 0;
+  background: #f9fafb;
+}
+
+.platinum-calc-card {
+  background: white;
+  border-radius: 40px;
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.platinum-calc-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.platinum-calc-inputs {
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.platinum-calc-result {
+  background: var(--plat-dark);
+  color: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.result-price {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 20px 0;
+  background: linear-gradient(135deg, #fff, #9ca3af);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== FOOTER REFINEMENT ===== */
+.footer-professional {
+  background: #000;
+  color: white;
+  padding: 100px 0 50px;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1200px) {
+  .platinum-content {
+    grid-template-columns: 1fr;
+  }
+
+  .platinum-filters-sidebar {
+    display: none;
+  }
+
+  .platinum-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .platinum-hero-title {
+    font-size: 3rem;
+  }
+
+  .platinum-rate-banner {
+    flex-direction: column;
+  }
+
+  .platinum-calc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .platinum-products-grid {
+    grid-template-columns: 1fr;
+  }
+}
