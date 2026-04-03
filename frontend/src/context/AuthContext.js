@@ -109,7 +109,7 @@ export const AuthProvider = ({ children }) => {
     updateProfile,
     loading,
     isAuthenticated: !!user,
-    isAdmin: user && user.role === 'admin'
+    isAdmin: user && (user.role === 'admin' || user.isAdmin === true || user.isAdmin === "true")
   };
 
   return (

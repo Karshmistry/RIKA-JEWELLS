@@ -4732,7 +4732,7 @@ function Navbar() {
 
   // Safe user menu items
   const userMenuItems = user ? [
-    ...(user && user.role === 'admin' ? [{ label: "Admin Dashboard", icon: "⚡", onClick: () => navigate("/admin/dashboard") }] : []),
+    ...(user && (user.role === 'admin' || user.isAdmin === true || user.isAdmin === "true") ? [{ label: "Admin Dashboard", icon: "⚡", onClick: () => navigate("/admin/dashboard") }] : []),
     { label: "My Profile", icon: "👤", onClick: () => navigate("/profile") },
     { label: "My Orders", icon: "📦", onClick: () => navigate("/orders") },
     { label: "Wishlist", icon: "❤️", badge: wishlistCount, onClick: () => navigate("/wishlist") },

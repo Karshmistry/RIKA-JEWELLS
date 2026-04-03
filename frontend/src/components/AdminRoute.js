@@ -9,7 +9,7 @@ const AdminRoute = () => {
         return <div>Loading...</div>;
     }
 
-    return user && user.role === 'admin' ? <Outlet /> : <Navigate to="/login" replace />;
+    return user && (user.role === 'admin' || user.isAdmin === true || user.isAdmin === "true") ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
 export default AdminRoute;
