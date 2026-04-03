@@ -1064,59 +1064,127 @@ html {
 
 @media (max-width: 768px) {
   :root {
-    --section-padding: 50px;
+    --section-padding: 40px;
   }
 
   .container {
-    padding: 0 25px;
+    padding: 0 20px;
   }
 
-  .hero-title {
-    font-size: 50px;
+  .hero-title-premium {
+    font-size: 40px;
+    margin-bottom: 20px;
   }
 
-  .hero-btns {
+  .hero-promo-title {
+    font-size: 36px;
+  }
+
+  .hero-description-premium {
+    font-size: 16px;
+  }
+
+  .hero-btns-v2 {
     flex-direction: column;
     gap: 15px;
+    width: 100%;
   }
 
-  .btn-primary-gold,
-  .btn-outline-white {
+  .btn-editorial, .btn-editorial-light, .btn-editorial-outline, .btn-editorial-outline-light {
     width: 100%;
-    padding: 18px 40px;
+    padding: 15px 20px;
+    font-size: 14px;
+    text-align: center;
+    display: block;
   }
 
   .box-content {
-    padding: 30px;
+    padding: 20px;
   }
 
   .box-content h3 {
-    font-size: 28px;
+    font-size: 24px;
+  }
+  
+  .box-content p {
+    font-size: 13px;
   }
 
   .promise-flex {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column;
+    gap: 30px;
   }
 
-  .editorial-wrapper {
-    padding: 60px 30px;
+  .promise-item {
+    padding: 10px;
+  }
+
+  .society-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .society-info h2 {
+    font-size: 36px;
+  }
+
+  .society-visual {
+    height: 250px;
+    margin-top: 20px;
+  }
+
+  .concierge-card {
+    grid-template-columns: 1fr;
+  }
+
+  .concierge-text {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .concierge-text h3 {
+    font-size: 32px;
+  }
+
+  .concierge-image {
+    height: 250px;
   }
 
   .footer-top {
+    display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
   }
 
   .footer-links {
-    flex-wrap: wrap;
-    gap: 40px;
+    flex-direction: column;
+    gap: 30px;
   }
 
   .footer-bottom {
     flex-direction: column;
     gap: 20px;
+    text-align: center;
   }
-}
+
+  .testimonial-text {
+    font-size: 20px;
+  }
+  
+  .quote-mark {
+    font-size: 120px;
+    margin-bottom: -40px;
+  }
+
+  .press-logos {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .heritage-text p {
+    font-size: 15px;
+    text-align: justify;
+  }
+}
