@@ -85,21 +85,31 @@ img {
     overflow-x: hidden !important;
   }
 
-  /* 2. Sidebars to Top Full-Width */
-  [class$="-sidebar"],
-  [class*="sidebar"],
-  .filter-sidebar,
-  .admin-sidebar {
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: auto !important;
+  /* 2. Elegant Filter Drawers for Shop Pages on Mobile */
+  [class$="filters-sidebar"],
+  .filter-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: -110% !important; /* Hidden off-screen by default */
+    width: 320px !important;
+    max-width: 85vw !important;
+    height: 100vh !important;
+    background: #ffffff !important;
+    z-index: 9999 !important;
+    padding: 20px !important;
+    overflow-y: auto !important;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.1) !important;
     border-right: none !important;
-    border-bottom: 2px solid #eee !important;
-    padding: 15px 10px !important;
-    margin-bottom: 20px !important;
-    position: static !important;
+  }
+
+  [class$="filters-sidebar"].show,
+  .filter-sidebar.show {
+    left: 0 !important;
+  }
+  
+  [class$="close-filter"] {
+    display: block !important;
   }
 
   /* 3. Universal Product Grids - 2 columns on tablets/large phones */
