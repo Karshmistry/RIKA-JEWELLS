@@ -5269,6 +5269,19 @@ function Navbar() {
             </div>
 
             <div className="mobile-footer">
+              {user && (user.role === 'admin' || user.isAdmin === true || user.isAdmin === "true") && (
+                <button 
+                  className="mobile-logout" 
+                  style={{ backgroundColor: '#1a1a1a', color: '#dfc17b', marginBottom: '10px', border: '1px solid #dfc17b' }}
+                  onClick={() => {
+                    navigate("/admin/dashboard");
+                    setMobileMenu(false);
+                  }}
+                >
+                  ⚡ Admin Dashboard
+                </button>
+              )}
+
               {user ? (
                 <button className="mobile-logout" onClick={logout}>
                   🚪 Logout
