@@ -73,11 +73,16 @@ img {
   .admin-layout,
   [class$="-layout"],
   [class$="-page"],
+  [class*="-main"],
+  .silver-content, .gold-content, .diamond-content, .platinum-content, .gemstone-content, .wedding-content, .gift-content, .collections-content,
   .admin-container {
     display: flex !important;
     flex-direction: column !important;
     padding: 10px !important;
     margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
   }
 
   /* 2. Sidebars to Top Full-Width */
